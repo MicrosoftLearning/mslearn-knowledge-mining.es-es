@@ -12,9 +12,9 @@ En este ejercicio, creará una aptitud personalizada que tabula la frecuencia de
 
 ## Preparación para desarrollar una aplicación en Visual Studio Code
 
-Desarrollará la aplicación de búsqueda con Visual Studio Code. Los archivos de código de la aplicación se han proporcionado en un repositorio de GitHub.
+Desarrollará la aplicación de búsqueda con Visual Studio Code. Los archivos de código de la aplicación se han proporcionado en un repositorio de GitHub.
 
-> **Sugerencia**: Si ya ha clonado el repositorio **mslearn-knowledge-mining**, ábralo en Visual Studio Code. De lo contrario, siga estos pasos para clonarlo en el entorno de desarrollo.
+> **Sugerencia**: Si ya ha clonado el repositorio **mslearn-knowledge-mining**, ábralo en Visual Studio Code. De lo contrario, siga estos pasos para clonarlo en el entorno de desarrollo.
 
 1. Inicie Visual Studio Code.
 1. Abra la paleta (Mayús + Ctrl + P) y ejecute un comando **Git: Clone** para clonar el repositorio `https://github.com/MicrosoftLearning/mslearn-knowledge-mining` en una carpeta local (no importa qué carpeta).
@@ -146,7 +146,7 @@ Para implementar la funcionalidad de recuento de palabras como una aptitud perso
     - **Nombre de la aplicación de funciones**: *un nombre único*
     - **Publicar**: Código
     - **Pila en tiempo de ejecución**: Node.js.
-    - **Versión**: 14 LTS
+    - **Versión**: 18 LTS
     - **Región**: *la misma región que el recurso de Búsqueda de Azure AI*
 
 2. Espere a que se complete la implementación y, a continuación, vaya al recurso de aplicación de funciones implementado.
