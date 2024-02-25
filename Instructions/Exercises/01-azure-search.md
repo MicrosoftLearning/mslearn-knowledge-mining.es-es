@@ -86,7 +86,7 @@ Ahora que tiene los recursos necesarios, puede cargar algunos documentos en su c
 3. Guarde los cambios y haga clic con el botón derecho en la carpeta** 01-azure-search ** y abra un terminal integrado.
 4. Escriba el siguiente comando para iniciar sesión en su suscripción de Azure mediante la CLI de Azure.
 
-    ```
+    ```powershell
     az login
     ```
 
@@ -94,7 +94,7 @@ Ahora que tiene los recursos necesarios, puede cargar algunos documentos en su c
 
 5. Escriba el comando siguiente para ejecutar el archivo por lotes. De esta forma, se creará un contenedor de blobs en la cuenta de almacenamiento y se cargarán los documentos de la carpeta **data** en él.
 
-    ```
+    ```powershell
     UploadDocs
     ```
 
@@ -243,7 +243,7 @@ Aunque puede usar el portal para crear y modificar las soluciones de búsqueda, 
 4. En Visual Studio Code, en **skillset.json**, reemplace el marcador de posición **YOUR_COGNITIVE_SERVICES_KEY** por la clave de Servicios de Azure AI que copió en el Portapapeles.
 5. Desplácese por el archivo JSON y observe que incluye definiciones para las aptitudes que creó mediante la interfaz de usuario de Búsqueda de Azure AI en Azure Portal. En la parte inferior de la lista de aptitudes, se ha agregado una aptitud adicional con la siguiente definición:
 
-    ```
+    ```json
     {
         "@odata.type": "#Microsoft.Skills.Text.V3.SentimentSkill",
         "defaultLanguageCode": "en",
@@ -279,7 +279,7 @@ Aunque puede usar el portal para crear y modificar las soluciones de búsqueda, 
 2. Desplácese por el índice y consulte las definiciones de campo. Algunos campos se basan en metadatos y contenido del documento de origen y otros son los resultados de las aptitudes del conjunto de aptitudes.
 3. Tenga en cuenta que, al final de la lista de campos que definió en Azure Portal, se han agregado dos campos adicionales:
 
-    ```
+    ```json
     {
         "name": "sentiment",
         "type": "Edm.String",
@@ -306,19 +306,18 @@ Aunque puede usar el portal para crear y modificar las soluciones de búsqueda, 
 1. En Visual Studio Code, en la carpeta **modify-search**, abra **indexer.json**. Se muestra una definición JSON para **margies-indexer**, que asigna los campos extraídos del contenido y los metadatos del documento (en la sección **fieldMappings**) y los valores extraídos mediante las aptitudes del conjunto de aptitudes (en la sección **outputFieldMappings**) a los campos del índice.
 2. En la lista **fieldMappings**, observe la asignación del valor de **metadata_storage_path** al campo de la clave codificada en Base 64. Se creó cuando asignó el campo **metadata_storage_path** como clave y seleccionó la opción para codificar la clave en Azure Portal. Además, una nueva asignación asigna explícitamente el mismo valor al campo **url**, pero sin la codificación en Base 64:
 
-    ```
+    ```json
     {
         "sourceFieldName" : "metadata_storage_path",
         "targetFieldName" : "url"
-    }
-    
+    }    
     ```
 
     Todos los demás campos de contenido y metadatos del documento de origen se asignan de forma implícita a campos con el mismo nombre en el índice.
 
 3. Revise la sección **ouputFieldMappings**, que asigna las salidas de las aptitudes del conjunto de aptitudes a los campos del índice. La mayoría de ellas reflejan las opciones seleccionadas en la interfaz de usuario, pero se ha agregado la siguiente asignación para asignar el valor de **sentimentLabel** extraído mediante la aptitud de opinión al campo **sentiment** que agregó al índice:
 
-    ```
+    ```json
     {
         "sourceFieldName": "/document/sentimentLabel",
         "targetFieldName": "sentiment"
@@ -330,7 +329,7 @@ Aunque puede usar el portal para crear y modificar las soluciones de búsqueda, 
 1. Haga clic con el botón derecho en la carpeta **modify-search** y abra un terminal integrado.
 2. En el panel de terminal de la carpeta **modify-search**, escriba el siguiente comando para ejecutar el script **modify-search.cmd**, que envía las definiciones JSON a la interfaz de REST e inicia la indexación.
 
-    ```
+    ```powershell
     ./modify-search
     ```
 
