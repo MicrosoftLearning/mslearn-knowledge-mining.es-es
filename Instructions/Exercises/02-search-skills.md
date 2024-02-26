@@ -39,14 +39,14 @@ Desarrollará la aplicación de búsqueda con Visual Studio Code. Los archivos 
 1. Haga clic con el botón derecho en la carpeta **02-search-skill** y seleccione **Abrir en terminal integrado**.
 1. En el panel de terminal, escriba el siguiente comando para establecer una conexión autenticada con su suscripción de Azure.
 
-    ```
+    ```powershell
     az login --output none
     ```
 
 8. Cuando se le solicite, seleccione o inicie sesión en su suscripción de Azure. Después, vuelva a Visual Studio Code y espere a que se complete el proceso de inicio de sesión.
 9. Ejecute el siguiente comando para enumerar las ubicaciones de Azure.
 
-    ```
+    ```powershell
     az account list-locations -o table
     ```
 
@@ -54,7 +54,7 @@ Desarrollará la aplicación de búsqueda con Visual Studio Code. Los archivos 
 11. En el script **setup.cmd**, modifique las declaraciones de las variables **subscription_id**, **resource_group** y **location** con los valores adecuados del id. de suscripción, el nombre del grupo de recursos y el nombre de la ubicación. A continuación, guarde los cambios.
 12. En el terminal de la carpeta **02-search-skill**, escriba el siguiente comando para ejecutar el script:
 
-    ```
+    ```powershell
     ./setup
     ```
 
@@ -109,7 +109,7 @@ En este ejercicio, usará la interfaz de REST de Búsqueda de Azure AI para crea
 14. Haga clic con el botón derecho en la carpeta **create-search** y seleccione **Open in Integrated Terminal** (Abrir en terminal integrado).
 15. En el panel del terminal de la carpeta **create-search**, escriba el siguiente comando para ejecutar el script por lotes.
 
-    ```
+    ```powershell
     ./create-search
     ```
 
@@ -150,7 +150,7 @@ Para implementar la funcionalidad de recuento de palabras como una aptitud perso
     - **Región**: *la misma región que el recurso de Búsqueda de Azure AI*
 
 2. Espere a que se complete la implementación y, a continuación, vaya al recurso de aplicación de funciones implementado.
-3. En la página Información general de la aplicación de funciones, en la sección de la página, seleccione la pestaña **Functions**. A continuación, cree una nueva función en el portal con la siguiente configuración:
+3. En la página **Información general**, seleccione la opción **Crear en Azure Portal** para crear una nueva función con la siguiente configuración:
     - **Configure un entorno de desarrollo**"
         - **Entorno de desarrollo**: desarrollo en portal
     - **Seleccione una plantilla**"
@@ -262,7 +262,7 @@ module.exports = async function (context, req) {
 6. Guarde la función y, a continuación, abra el panel **Probar/ejecutar**.
 7. En el panel **Probar/ejecutar**, reemplace el **cuerpo** existente por el siguiente código JSON, que refleja el esquema esperado por una aptitud de Búsqueda de Azure AI en la que los registros que contienen datos de uno o varios documentos se envían para su procesamiento:
 
-    ```
+    ```json
     {
         "values": [
             {
@@ -284,10 +284,10 @@ module.exports = async function (context, req) {
         ]
     }
     ```
-    
+
 8. Haga clic en **Ejecutar** y analice el contenido de la respuesta HTTP que devuelve la función. El contenido refleja el esquema que espera Búsqueda de Azure AI al consumir una aptitud, en el que se devuelve una respuesta para cada documento. En este caso, la respuesta está formada por hasta 10 términos en cada documento en orden descendente según la frecuencia con la que aparecen:
 
-    ```
+    ```json
     {
         "values": [
         {
@@ -348,7 +348,7 @@ Ahora tiene que incluir la función como una aptitud personalizada en el conjunt
 13. Haga clic con el botón derecho en la carpeta **update-search** y seleccione **Abrir en terminal integrado**.
 14. En el panel del terminal de la carpeta **update-search**, escriba el siguiente comando para ejecutar el script por lotes.
 
-    ```
+    ```powershell
     ./update-search
     ```
 

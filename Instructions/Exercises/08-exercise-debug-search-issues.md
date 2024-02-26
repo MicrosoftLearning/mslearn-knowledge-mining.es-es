@@ -71,9 +71,11 @@ El indexador comenzará a ingerir 50 documentos. Sin embargo, si comprueba el es
 
 1. Establezca su **Nivel de acceso anónimo** en **Contenedor (acceso de lectura anónimo para contenedores y blobs)**.
 
+    > **Nota**: Es posible que tenga que habilitar el acceso anónimo al blob para seleccionar esta opción. Para ello, en la cuenta de almacenamiento, vaya a **Configuración**, establezca **Permitir acceso anónimo al blob** en **Habilitado** y, luego, seleccione **Guardar**.
+
 1. Seleccione **Crear**.
 1. Seleccione el nuevo contenedor en la lista y, a continuación, seleccione **Seleccionar**.
-
+1. En **Plantilla del indexador**, seleccione **hotel-sample-indexer**.
 1. Seleccione **Guardar sesión**.
 
     El gráfico de dependencias muestra que, para cada documento, hay un error en tres aptitudes.
@@ -87,7 +89,7 @@ El indexador comenzará a ingerir 50 documentos. Sin embargo, si comprueba el es
 
     *Código de idioma no válido (Desconocido). Idiomas admitidos: ar,cs,da,de,en,es,fi,fr,hu,it,ja,ko,nl,no,pl,pt-BR,pt-PT,ru,sv,tr,zh-Hans. Para más información, consulte: https://aka.ms/language-service/language-support.*
 
-Si examina el gráfico de dependencias, la aptitud Detección de idioma tiene salidas a las tres aptitudes con advertencias. Asimismo, la entrada de aptitud que provoca el error es `languageCode`.
+    Si examina el gráfico de dependencias, la aptitud Detección de idioma tiene salidas a las tres aptitudes con advertencias. Asimismo, la entrada de aptitud que provoca el error es `languageCode`.
 
 1. En el gráfico de dependencias, seleccione **Detección de idioma**.
 

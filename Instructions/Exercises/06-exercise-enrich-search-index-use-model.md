@@ -157,7 +157,7 @@ Ahora, creará un entorno personalizado para que pueda implementar en un punto d
 1. Seleccione la pestaña **Entornos personalizados**.
 1. Seleccione **+ Create** (+ Crear).
 1. En **Nombre**, escriba **my-custom-environment**.
-1. En la lista de entornos mantenidos de **Seleccionar tipo de entorno**, seleccione **automl-gpu:2**.
+1. En la lista de *entornos mantenidos* en **Seleccionar tipo de entorno**, seleccione la versión de **automl-gpu** más reciente.
 1. Seleccione **Siguiente**.
 1. En el equipo local, abra el archivo `conda_env.yaml` que ha descargado anteriormente y copie su contenido.
 1. Vuelva al explorador y seleccione **conda_dependencies.yaml** en el panel Personalizar.
@@ -175,7 +175,7 @@ El clúster de inferencia debería estar listo para usarse. También ha editado 
 1. Seleccione **Implementar** y, después, **Punto de conexión en tiempo real**.
 
     ![Captura de pantalla del panel Selección del punto de conexión.](../media/06-media/04-select-endpoint.png)
-1. En **Nombre**, escriba **car-evaluation-endpoint**.
+1. En **Nombre**, escriba un nombre único, por ejemplo, **car-evaluation-endpoint-1440637584**.
 1. En **Tipo de proceso**, seleccione **Administrado**.
 1. En **Tipo de autenticación**, seleccione **Autenticación basada en claves**.
 1. Seleccione **Siguiente** y luego otra vez **Siguiente**.
@@ -231,7 +231,7 @@ Espere a que se implemente el modelo; esto puede tardar hasta 10 minutos. Puede
 
     ```json
     {
-        "predicted_price": 5790.948226933133
+        "predicted_price": 5852.823214312815
     }
     ```
 
@@ -300,10 +300,10 @@ Ahora creará un nuevo servicio de Cognitive Search y enriquecerá un índice me
 ### Creación de un recurso de Azure AI Search
 
 1. En Azure Portal, en la página principal, seleccione **+ Crear un recurso**.
-1. Busque **búsqueda** y seleccione **Búsqueda de Azure AI**.
+1. Busque **Búsqueda de Azure AI** y seleccione **Búsqueda de Azure AI**.
 1. Seleccione **Crear**.
 1. En **Grupo de recursos**, seleccione **aaml-for-acs-enrichment**.
-1. En Nombre del servicio, escriba **acs-enriched**.
+1. Como nombre del servicio, escriba un nombre único, por ejemplo, **acs-enriched-1440637584**.
 1. En **Ubicación**, seleccione la misma región que ha usado anteriormente.
 1. Seleccione **Revisar y crear** y, luego, **Crear**.
 1. Espere a que se implementen los recursos y, después, seleccione **Ir al recurso**.
