@@ -39,14 +39,14 @@ Desarrollará la aplicación de búsqueda con Visual Studio Code. Los archivos 
 6. Haga clic con el botón derecho en la carpeta **03-knowledge-store** y seleccione **Open in Integrated Terminal** (Abrir en terminal integrado).
 7. En el panel de terminal, escriba el siguiente comando para establecer una conexión autenticada con su suscripción de Azure.
 
-    ```
+    ```powershell
     az login --output none
     ```
 
 8. Cuando se le solicite, inicie sesión en su suscripción de Azure. Después, vuelva a Visual Studio Code y espere a que se complete el proceso de inicio de sesión.
 9. Ejecute el siguiente comando para enumerar las ubicaciones de Azure.
 
-    ```
+    ```powershell
     az account list-locations -o table
     ```
 
@@ -54,8 +54,8 @@ Desarrollará la aplicación de búsqueda con Visual Studio Code. Los archivos 
 11. En el script **setup.cmd**, modifique las declaraciones de las variables **subscription_id**, **resource_group** y **location** con los valores adecuados del id. de suscripción, el nombre del grupo de recursos y el nombre de la ubicación. A continuación, guarde los cambios.
 12. En el terminal de la carpeta **03-create-knowledge-store**, escriba el siguiente comando para ejecutar el script:
 
-    ```
-    setup
+    ```powershell
+    ./setup
     ```
     > **Nota**: El módulo de la CLI de búsqueda está en versión preliminar y puede dejar de responder en el proceso *- En ejecución ..* . Si esto sucede durante más de dos minutos, presione Ctrl+C para cancelar la operación de ejecución larga y, a continuación, seleccione **N** cuando se le pregunte si desea finalizar el script. A continuación, debería completarse correctamente.
     >
@@ -131,8 +131,8 @@ Ahora que ha preparado los objetos JSON que definen los componentes de la soluci
 4. Haga clic con el botón derecho en la carpeta **create-search** y seleccione **Open in Integrated Terminal** (Abrir en terminal integrado).
 5. En el panel del terminal de la carpeta **create-search**, escriba el siguiente comando para ejecutar el script por lotes.
 
-    ```
-    create-search
+    ```powershell
+    ./create-search
     ```
 
 6. Cuando se complete el script, en Azure Portal, en la página del recurso de Búsqueda de Azure AI, seleccione la página **Indizadores** y espere a que se complete el proceso de indexación.
@@ -151,11 +151,11 @@ Las proyecciones de *objetos* definidas en el conjunto de aptitudes de Margie's 
 
 1. En la Azure Portal, visualice la cuenta de Azure Storage que creó anteriormente.
 2. Seleccione la pestaña **Explorador de Storage** (en el panel de la izquierda) para ver la cuenta de almacenamiento en la interfaz del explorador de almacenamiento en Azure Portal.
-2. Expanda **Contenedores de blobs** para ver los contenedores de la cuenta de almacenamiento. Además del contenedor **margies** en el que se almacenan los datos de origen, debería haber dos nuevos contenedores: **margies-images** y **margies-knowledge**. Estos contenedores se han creado mediante el proceso de indexación.
-3. Seleccione el contenedor **margies-knowledge**. Debe contener una carpeta para cada documento indexado.
-4. Abra cualquiera de las carpetas y, después, abra el archivo **knowledge-projection.json** que contiene. Cada archivo JSON contiene una representación de un documento indexado, incluidos los datos enriquecidos extraídos por el conjunto de aptitudes, tal como se muestra aquí.
+3. Expanda **Contenedores de blobs** para ver los contenedores de la cuenta de almacenamiento. Además del contenedor **margies** en el que se almacenan los datos de origen, debería haber dos nuevos contenedores: **margies-images** y **margies-knowledge**. Estos contenedores se han creado mediante el proceso de indexación.
+4. Seleccione el contenedor **margies-knowledge**. Debe contener una carpeta para cada documento indexado.
+5. Abra cualquiera de las carpetas y, después, abra el archivo **knowledge-projection.json** que contiene. Cada archivo JSON contiene una representación de un documento indexado, incluidos los datos enriquecidos extraídos por el conjunto de aptitudes, tal como se muestra aquí.
 
-```
+```json
 {
     "file_id":"abcd1234....",
     "file_name":"Margies Travel Company Info.pdf",
@@ -191,7 +191,7 @@ La capacidad de crear proyecciones de *objetos* como esta le permite generar obj
 
 Las proyecciones de *archivos* definidas en el conjunto de aptitudes crean archivos JPEG para cada imagen extraída de los documentos durante el proceso de indexación.
 
-1. En la interfaz del explorador de almacenamiento en Azure Portal, seleccione el contenedor de blobs **margies-images**. Este contenedor contiene una carpeta para cada documento que incluye imágenes.
+1. En la interfaz del *explorador de almacenamiento* en Azure Portal, seleccione el contenedor de blobs **margies-images**. Este contenedor contiene una carpeta para cada documento que incluye imágenes.
 2. Abra cualquiera de las carpetas y vea su contenido (cada una contiene al menos un archivo \*.jpg).
 3. Abra cualquiera de los archivos de imagen para comprobar que contienen imágenes extraídas de los documentos.
 
@@ -201,7 +201,7 @@ Esta capacidad de generar proyecciones de *archivos* hace que la indexación sea
 
 Las proyecciones de *tablas* definidas en el conjunto de aptitudes forman un esquema relacional de datos enriquecidos.
 
-1. En la interfaz del explorador de almacenamiento en Azure Portal, expanda **Tablas**.
+1. En la interfaz del *explorador de almacenamiento* en Azure Portal, expanda **Tablas**.
 2. Seleccione la tabla **docs** para ver sus columnas. Se incluyen algunas columnas estándar de las tablas de Azure Storage, para ocultarlas, modifique las **opciones de columna** y seleccione solo las columnas siguientes:
     - **document_id**: la columna de clave generada automáticamente por el proceso de indexación.
     - **file_id**: la dirección URL del archivo codificado.
