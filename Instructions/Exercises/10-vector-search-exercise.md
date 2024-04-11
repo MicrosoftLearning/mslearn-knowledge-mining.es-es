@@ -12,7 +12,7 @@ Necesitará lo siguiente para realizar correctamente este ejercicio:
 - La aplicación [Postman](https://www.postman.com/downloads/)
 - Una suscripción de Azure
 - Servicio Azure AI Search
-- La [colección de muestras de Postman](https://github.com/Azure/cognitive-search-vector-pr/tree/main/postman-collection) *Vector-Search-Quickstart.postman_collection v1.0 json*.
+- La colección de muestras de Postman ubicadas en este repositorio: *Vector-Search-Quickstart.postman_collection v1.0 json*.
 
 > **Nota** Puede encontrar más información sobre la aplicación Postman [aquí](https://learn.microsoft.com/en-us/azure/search/search-get-started-rest) si es necesario.
 
@@ -20,24 +20,24 @@ Necesitará lo siguiente para realizar correctamente este ejercicio:
 
 En primer lugar, configure el proyecto realizando los pasos siguientes:
 
-1. Anote la **dirección URL** y la **clave** del servicio Cognitive Search.
+1. Anote la **dirección URL** y la **clave** del servicio de Búsqueda de Azure AI.
 
     ![Ilustración de la ubicación del nombre del servicio y las claves.](../media/vector-search/search keys.png)
 
-1. Descargue la [colección de muestras de Postman](https://github.com/Azure/cognitive-search-vector-pr/tree/main/postman-collection). 
+1. Descargue la [colección de muestras de Postman](https://github.com/MicrosoftLearning/mslearn-knowledge-mining/blob/main/Labfiles/10-vector-search/Vector%20Search.postman_collection%20v1.0.json).
 1. Abra Postman e importe la colección seleccionando el botón **Importar**; y arrástrela y coloque la carpeta de recopilación en el cuadro.
 
     ![Imagen del cuadro de diálogo Importar](../media/vector-search/import.png)
 
 1. Seleccione el botón **Bifurcar** para crear una bifurcación de la colección y agregar un nombre único.
 1. Haga clic con el botón derecho en el nombre de la colección y seleccione **Editar**.
-1. Seleccione la pestaña **Variables** y escriba los valores siguientes mediante el servicio de búsqueda y los nombres de índice del servicio Cognitive Search:
+1. Seleccione la pestaña **Variables** y escriba los valores siguientes mediante el servicio de búsqueda y los nombres de índice del servicio de Búsqueda de Azure AI:
 
     ![Diagrama que muestra un ejemplo de configuración de variables](../media/vector-search/variables.png)
 
 1. Para guardar los cambios, seleccione el botón **Guardar**.
 
-Está listo para enviar sus solicitudes al servicio Azure Cognitive Search.
+Está listo para enviar sus solicitudes al servicio de Búsqueda de Azure AI.
 
 ## Crear un índice
 
