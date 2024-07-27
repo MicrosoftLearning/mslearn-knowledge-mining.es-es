@@ -28,7 +28,7 @@ Desarrollará la aplicación de búsqueda con Visual Studio Code. Los archivos 
 > **Nota**: Si ha completado previamente el ejercicio **[Creación de una solución de Búsqueda de Azure AI](01-azure-search.md)** y todavía tiene esos recursos de Azure en su suscripción, puede omitir esta sección y empezar en la sección **Creación de una solución de búsqueda**. De lo contrario, siga los pasos que se indican a continuación para aprovisionar los recursos de Azure necesarios.
 
 1. En un explorador web, abra Azure Portal en `https://portal.azure.com` e inicie sesión con la cuenta de Microsoft asociada a su suscripción de Azure.
-2. En la barra de búsqueda superior, busque *Servicios de Azure AI*, seleccione **Servicios de Azure AI** y cree un recurso de cuenta de varios servicios de Azure AI con la siguiente configuración:
+2. En la barra de búsqueda superior, busca *Servicios de Azure AI*, selecciona **Cuenta de varios servicios de Azure AI** y crea un recurso de cuenta de varios servicios de Azure AI con la siguiente configuración:
     - **Suscripción**: *suscripción de Azure*
     - **Grupo de recursos**: *elija o cree un grupo de recursos (si usa una suscripción restringida, es posible que no tenga permiso para crear un nuevo grupo de recursos; use el proporcionado)*
     - **Región**: *Elegir entre regiones disponibles geográficamente cercanas*
@@ -371,6 +371,13 @@ Ahora que tiene un índice, puede realizar búsquedas en él.
     ```
 
     Esta consulta recupera los campos **url** y **top_words** de todos los documentos que mencionan *Las Vegas*.
+
+## Eliminación de los recursos del ejercicio
+
+Ahora que ha completado el ejercicio, elimine todos los recursos que ya no necesita. Eliminación de los recursos de Azure:
+
+1. En **Azure Portal**, seleccione Grupos de recursos.
+1. Seleccione el grupo de recursos que no necesite y luego **Eliminar grupo de recursos**.
 
 ## Más información
 

@@ -39,7 +39,7 @@ La solución que creará para Margie's Travel requiere los siguientes recursos e
 
 Si aún no tiene uno en su suscripción, deberá aprovisionar un recurso de **Servicios de Azure AI**. La solución de búsqueda lo usará para enriquecer los datos del almacén de datos con información generada mediante inteligencia artificial.
 
-1. Vuelva a la página principal de Azure Portal y seleccione el botón **&#65291;Crear un recurso**, busque *Servicios de Azure AI* y cree un recurso de **Servicios de Azure AI** con la siguiente configuración:
+1. Vuelve a la página principal de Azure Portal y después selecciona el botón **&#65291;Crear un recurso**, busca *Servicios de Azure AI* y crea un recurso de **cuenta de varios servicios de Servicios de Azure AI** con la siguiente configuración:
     - **Suscripción**: *suscripción de Azure*
     - **Grupo de recursos**: *el mismo grupo de recursos que el recurso de Búsqueda de Azure AI*
     - **Región**: *la misma ubicación que el recurso de Búsqueda de Azure AI*
@@ -460,6 +460,13 @@ La aplicación web ya incluye código para procesar y representar los resultados
     - **skyscraper** (rascacielos): observe que esta palabra no aparece en el contenido real de ningún documento, pero se encuentra en los *títulos de imagen* y las *etiquetas de imagen* que se generaron para las imágenes de algunos documentos.
     - **Mojave desert** (Desierto de Mojave): observe que este término se identifica como una *ubicación* en algunos documentos.
 10. Cierre la pestaña del explorador que contiene el sitio web de Margie's Travel y vuelva a Visual Studio Code. Después, en el terminal de Python de la carpeta **margies-travel** (donde se está ejecutando la aplicación Flask o dotnet), presione Ctrl+C para detener la aplicación.
+
+## Eliminación de los recursos del ejercicio
+
+Ahora que ha completado el ejercicio, elimine todos los recursos que ya no necesita. Eliminación de los recursos de Azure:
+
+1. En **Azure Portal**, seleccione Grupos de recursos.
+1. Seleccione el grupo de recursos que no necesite y luego **Eliminar grupo de recursos**.
 
 ## Más información
 

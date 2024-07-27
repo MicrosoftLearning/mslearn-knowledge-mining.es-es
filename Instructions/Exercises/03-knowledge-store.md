@@ -216,6 +216,13 @@ Las proyecciones de *tablas* definidas en el conjunto de aptitudes forman un esq
 
 La capacidad de crear proyecciones de *tablas* le permite crear soluciones de análisis y generación de informes que consultan el esquema relacional; por ejemplo, con Microsoft Power BI. Las columnas de clave generadas automáticamente se pueden usar para combinar las tablas en las consultas; por ejemplo, para devolver todas las ubicaciones mencionadas en un documento específico.
 
+## Eliminación de los recursos del ejercicio
+
+Ahora que ha completado el ejercicio, elimine todos los recursos que ya no necesita. Eliminación de los recursos de Azure:
+
+1. En **Azure Portal**, seleccione Grupos de recursos.
+1. Seleccione el grupo de recursos que no necesite y luego **Eliminar grupo de recursos**.
+
 ## Más información
 
 Para obtener más información sobre cómo crear almacenes de conocimiento con Búsqueda de Azure AI, consulte la [documentación de Búsqueda de Azure AI](https://docs.microsoft.com/azure/search/knowledge-store-concept-intro).
