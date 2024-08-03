@@ -95,7 +95,7 @@ Ahora que tiene los recursos necesarios, puede cargar algunos documentos en su c
 5. Escriba el comando siguiente para ejecutar el archivo por lotes. De esta forma, se creará un contenedor de blobs en la cuenta de almacenamiento y se cargarán los documentos de la carpeta **data** en él.
 
     ```powershell
-    UploadDocs
+    .\UploadDocs.cmd
     ```
 
 ## Indexación de los documentos
@@ -146,25 +146,25 @@ Ahora que tiene los documentos en su lugar, puede indexarlos para crear una solu
     | language | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
 
 10. Compruebe las selecciones y preste especial atención a que las opciones **Recuperable**, **Filtrable**, **Ordenable**, **Clasificable** y **Buscable** estén seleccionadas para cada campo (puede ser difícil cambiarlas más adelante). A continuación, proceda con el siguiente paso (*Creación de un indexador*).
-11. Cambie el **Nombre del indexador** a **margies-index**.
-12. Deje la **Programación** establecida en **Una vez**.
-13. Expanda las opciones **Avanzadas** y asegúrese de que la opción **Claves de codificación Base 64** está seleccionada (por lo general, la codificación de claves hace que el índice sea más eficaz).
-14. Seleccione **Enviar** para crear un origen de datos, un conjunto de aptitudes, un índice y un indexador. El indexador se ejecuta automáticamente y ejecuta la canalización de indexación, que hace lo siguiente:
+11. Cambia el **Nombre del indexador** a **margies-index**.
+12. Deja la **Programación** establecida en **Una vez**.
+13. Expande las opciones **Avanzadas** y asegúrate de que la opción **Claves de codificación Base 64** está seleccionada (por lo general, la codificación de claves hace que el índice sea más eficaz).
+14. Selecciona **Enviar** para crear un origen de datos, un conjunto de aptitudes, un índice y un indexador. El indexador se ejecuta automáticamente y ejecuta la canalización de indexación, que hace lo siguiente:
     1. Extrae los campos de metadatos del documento y el contenido del origen de datos.
     2. Ejecuta el conjunto de aptitudes cognitivas para generar campos enriquecidos adicionales.
     3. Asigna los campos extraídos al índice.
-15. En la mitad inferior de la página **Información general** del recurso de Búsqueda de Azure AI, consulte la pestaña **Indizadores**, que debe mostrar el elemento **margies-indexer** recién creado. Espere unos minutos y haga clic en **&orarr; Actualizar** hasta que el campo **Estado** indique que se ha realizado correctamente.
+15. En el lado izquierdo, mira la página **Indexadores**, que debe mostrar el **margies-indexer** recién creado. Espera unos minutos y haz clic en **&orarr; Actualizar** hasta que el campo **Estado** indique que se ha realizado correctamente.
 
 ## Búsqueda en el índice
 
-Ahora que tiene un índice, puede realizar búsquedas en él.
+Ahora que tienes un índice, puedes realizar búsquedas en él.
 
-1. En la parte superior de la página **Información general** del recurso de Búsqueda de Azure AI, seleccione **Explorador de búsqueda**.
-2. En el Explorador de búsqueda, en el cuadro **Cadena de consulta**, escriba `*` (un solo asterisco) y, a continuación, seleccione **Buscar**.
+1. En la parte superior de la página **Información general** del recurso de Búsqueda de Azure AI, selecciona **Explorador de búsqueda**.
+2. En el Explorador de búsqueda, en el cuadro **Cadena de consulta**, escribe `*` (un solo asterisco) y, a continuación, selecciona **Buscar**.
 
-    Esta consulta recupera todos los documentos del índice en formato JSON. Examine los resultados y fíjese en los campos de cada documento, que incluyen el contenido, los metadatos y los datos enriquecidos del documento extraídos mediante las aptitudes cognitivas seleccionadas.
+    Esta consulta recupera todos los documentos del índice en formato JSON. Examina los resultados y fíjate en los campos de cada documento, que incluyen el contenido, los metadatos y los datos enriquecidos del documento extraídos mediante las aptitudes cognitivas seleccionadas.
 
-3. En el menú **Ver**, seleccione **Vista JSON** y observe que se muestra la solicitud JSON para la búsqueda, de la siguiente manera:
+3. En el menú **Ver**, selecciona **Vista JSON** y observa que se muestra la solicitud JSON para la búsqueda, de la siguiente manera:
 
     ```json
     {
@@ -172,7 +172,7 @@ Ahora que tiene un índice, puede realizar búsquedas en él.
     }
     ```
 
-1. Modifique la solicitud JSON para incluir el parámetro **count** como se muestra aquí:
+1. Modifica la solicitud JSON para incluir el parámetro **count** como se muestra aquí:
 
     ```json
     {
@@ -181,9 +181,9 @@ Ahora que tiene un índice, puede realizar búsquedas en él.
     }
     ```
 
-1. Envíe la búsqueda modificada. Esta vez, los resultados incluyen un campo **@odata.count** en la parte superior de los resultados que indica el número de documentos devueltos por la búsqueda.
+1. Envía la búsqueda modificada. Esta vez, los resultados incluyen un campo **@odata.count** en la parte superior de los resultados que indica el número de documentos devueltos por la búsqueda.
 
-4. Pruebe la siguiente consulta:
+4. Prueba la siguiente consulta:
 
     ```json
     {
@@ -195,7 +195,7 @@ Ahora que tiene un índice, puede realizar búsquedas en él.
 
     Esta vez, los resultados incluyen solo el nombre de archivo, el autor y las ubicaciones mencionadas en el contenido del documento. El nombre de archivo y el autor están en los campos **metadata_storage_name** y **metadata_author**, que se extrajeron del documento de origen. El campo **locations** se generó mediante una aptitud cognitiva.
 
-5. Ahora pruebe la siguiente cadena de consulta:
+5. Ahora prueba la siguiente cadena de consulta:
 
     ```json
     {
@@ -205,7 +205,7 @@ Ahora que tiene un índice, puede realizar búsquedas en él.
     }
     ```
 
-    Con esta búsqueda se buscan documentos que mencionen "New York" (Nueva York) en cualquiera de los campos en los que se pueden realizar búsquedas y devuelve el nombre de archivo y las frases clave del documento.
+    Con esta búsqueda se buscan documentos que mencionen "New York" en cualquiera de los campos en los que se pueden realizar búsquedas y devuelve el nombre de archivo y las frases clave del documento.
 
 6. Vamos a probar una consulta más:
 
@@ -218,30 +218,30 @@ Ahora que tiene un índice, puede realizar búsquedas en él.
     }
     ```
 
-    Esta consulta devuelve el nombre de archivo de los documentos creados por *Reviewer* (Revisor) que mencionan "New York" (Nueva York).
+    Esta consulta devuelve el nombre de archivo de los documentos creados por *Reviewer* que mencionan "New York".
 
 ## Exploración y modificación de definiciones de componentes de búsqueda
 
-Los componentes de la solución de búsqueda se basan en definiciones JSON, que puede consultar y editar en Azure Portal.
+Los componentes de la solución de búsqueda se basan en definiciones JSON, que puedes consultar y editar en Azure Portal.
 
-Aunque puede usar el portal para crear y modificar las soluciones de búsqueda, a menudo es conveniente definir los objetos de búsqueda en JSON y usar la interfaz de REST de Servicios de Azure AI para crearlas y modificarlas.
+Aunque puedes usar el portal para crear y modificar las soluciones de búsqueda, a menudo es conveniente definir los objetos de búsqueda en JSON y usar la interfaz de REST de Servicios de Azure AI para crearlas y modificarlas.
 
 ### Obtención del punto de conexión y la clave del recurso de Búsqueda de Azure AI
 
-1. En Azure Portal, vuelva a la página **Información general** del recurso de Búsqueda de Azure AI y, en la sección superior de la página, busque la **dirección URL** del recurso (que es similar a **https://resource_name.search.windows.net** ) y cópiela en el Portapapeles.
-2. En Visual Studio Code, en el panel Explorador, expanda la carpeta **01-azure-search** y la subcarpeta **modify-search** y seleccione el archivo **modify-search.cmd** para abrirlo. Usará este archivo de script para ejecutar los comandos *cURL* que envían el JSON a la interfaz de REST de Servicios de Azure AI.
-3. En **modify-search.cmd**, reemplace el marcador de posición **YOUR_SEARCH_URL** por la dirección URL que copió en el Portapapeles.
-4. En Azure Portal, consulte la página **Claves** del recurso de Búsqueda de Azure AI y copie la **Clave de administrador principal** en el Portapapeles.
-5. En Visual Studio Code, reemplace el marcador de posición **YOUR_ADMIN_KEY** por la clave que copió en el Portapapeles.
-6. Guarde los cambios en el archivo **modify-search.cmd** (pero no lo ejecute todavía).
+1. En Azure Portal, vuelve a la página **Información general** del recurso de Búsqueda de Azure AI y, en la sección superior de la página, busca la **dirección URL** del recurso (que es similar a **https://resource_name.search.windows.net** ) y cópiala en el Portapapeles.
+2. En Visual Studio Code, en el panel Explorador, expande la carpeta **01-azure-search** y la subcarpeta **modify-search** y selecciona el archivo **modify-search.cmd** para abrirlo. Usarás este archivo de script para ejecutar los comandos *cURL* que envían el JSON a la interfaz de REST de Servicios de Azure AI.
+3. En **modify-search.cmd**, reemplaza el marcador de posición **YOUR_SEARCH_URL** por la dirección URL que copiaste en el Portapapeles.
+4. En Azure Portal, consulta la página **Claves** del recurso de Búsqueda de Azure AI y copia la **Clave de administrador principal** en el Portapapeles.
+5. En Visual Studio Code, reemplaza el marcador de posición **YOUR_ADMIN_KEY** por la clave que copiaste en el Portapapeles.
+6. Guarda los cambios en el archivo **modify-search.cmd** (pero no lo ejecutes todavía).
 
 ### Revisión y modificación del conjunto de aptitudes
 
-1. En Visual Studio Code, en la carpeta **modify-search**, abra **skillset.json**. Se muestra una definición JSON para **margies-skillset**.
-2. En la parte superior de la definición del conjunto de aptitudes, observe el objeto **cognitiveServices**, que se usa para conectar el recurso de Servicios de Azure AI al conjunto de aptitudes.
-3. En Azure Portal, abra el recurso de Servicios de Azure AI (<u>no</u> el recurso de Búsqueda de Azure) y consulte la página **Claves**. A continuación, copie el valor de **Clave 1** en el Portapapeles.
-4. En Visual Studio Code, en **skillset.json**, reemplace el marcador de posición **YOUR_COGNITIVE_SERVICES_KEY** por la clave de Servicios de Azure AI que copió en el Portapapeles.
-5. Desplácese por el archivo JSON y observe que incluye definiciones para las aptitudes que creó mediante la interfaz de usuario de Búsqueda de Azure AI en Azure Portal. En la parte inferior de la lista de aptitudes, se ha agregado una aptitud adicional con la siguiente definición:
+1. En Visual Studio Code, en la carpeta **modify-search**, abre **skillset.json**. Se muestra una definición JSON para **margies-skillset**.
+2. En la parte superior de la definición del conjunto de aptitudes, observa el objeto **cognitiveServices**, que se usa para conectar el recurso de Servicios de Azure AI al conjunto de aptitudes.
+3. En Azure Portal, abre el recurso de Servicios de Azure AI (<u>no</u> el recurso de Búsqueda de Azure) y consulta la página **Claves**. A continuación, copia el valor de **Clave 1** en el Portapapeles.
+4. En Visual Studio Code, en **skillset.json**, reemplaza el marcador de posición **YOUR_COGNITIVE_SERVICES_KEY** por la clave de Servicios de Azure AI que copiaste en el Portapapeles.
+5. Desplázate por el archivo JSON y observa que incluye definiciones para las aptitudes que creaste mediante la interfaz de usuario de Búsqueda de Azure AI en Azure Portal. En la parte inferior de la lista de aptitudes, se ha agregado una aptitud adicional con la siguiente definición:
 
     ```json
     {
