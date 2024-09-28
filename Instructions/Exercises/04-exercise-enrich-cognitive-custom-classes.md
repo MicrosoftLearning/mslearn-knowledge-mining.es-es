@@ -127,8 +127,8 @@ En este ejercicio se usan 210 archivos de texto que contienen un resumen del arg
 
 1. En **Nombre**, escriba **movie-genre-classifier**.
 1. En **Idioma principal del texto** selecciones **Inglés (EE.UU.)**.
-1. En **Descripción**, escriba **Un modelo que pueda identificar el género de una película a partir de su resumen**.
 1. Seleccione **Sí, habilitar el conjunto de datos multilingüe**.
+1. En **Descripción**, escriba **Un modelo que pueda identificar el género de una película a partir de su resumen**.
 1. Seleccione **Next** (Siguiente).
 
     ![Captura de pantalla que muestra cómo seleccionar el contenedor con datos de ejemplo.](../media/04-media/choose-container.png)
@@ -485,7 +485,7 @@ Cada documento del índice debe tener un nuevo campo `textclass` que se pueda bu
 
 Ahora que ha completado el ejercicio, elimine todos los recursos que ya no necesita.
 
-### Eliminación de recursos del ejercicio
+### Limpieza
 
 1. En Azure Portal, vaya a la página Inicio y seleccione **Grupos de recursos**.
 1. Seleccione los grupos de recursos que no necesite y luego **Eliminar grupo de recursos**.

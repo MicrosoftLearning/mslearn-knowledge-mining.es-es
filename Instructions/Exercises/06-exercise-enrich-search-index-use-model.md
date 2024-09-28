@@ -54,6 +54,7 @@ Ahora creará un modelo de regresión y lo entrenará mediante una canalización
 
     ![Captura de pantalla que muestra la canalización con buen aspecto y el botón Enviar resaltado.](../media/06-media/submit-pipeline.png)
 1. Seleccione **Aspectos básicos** en el panel **Configuración del trabajo de canalización**.
+   > Nota: Si ocultaste el panel **Configurar trabajo de canalización** antes, puedes abrirlo de nuevo seleccionando **Configurar y enviar**.
 1. Seleccione **Crear nuevo** en el nombre del experimento.
 1. En **Nombre de nuevo experimento**, escriba **linear-regression-training**.
 1. Seleccione **Revisar y enviar** y, después, seleccione **Enviar**.
@@ -175,9 +176,9 @@ El clúster de inferencia debería estar listo para usarse. También ha editado 
 1. Seleccione **Implementar** y, después, **Punto de conexión en tiempo real**.
 
     ![Captura de pantalla del panel Selección del punto de conexión.](../media/06-media/04-select-endpoint.png)
-1. En **Nombre**, escriba un nombre único, por ejemplo, **car-evaluation-endpoint-1440637584**.
+1. En **Nombre del punto de conexión**, escribe un nombre único, por ejemplo, **car-evaluation-endpoint-1440637584**.
 1. En **Tipo de proceso**, seleccione **Administrado**.
-1. En **Tipo de autenticación**, seleccione **Autenticación basada en claves**.
+1. En **Tipo de autenticación**, selecciona **Basada en claves**.
 1. Seleccione **Siguiente** y luego otra vez **Siguiente**.
 1. Seleccione **Siguiente** de nuevo.
 1. En el campo **Seleccione un script de puntuación para la inferencia**, vaya al archivo `score.py` actualizado y selecciónelo.
@@ -252,7 +253,7 @@ Ahora creará un nuevo servicio de Cognitive Search y enriquecerá un índice me
 
     ![Captura de pantalla en la que se muestra la selección de una cuenta de almacenamiento en Azure Portal.](../media/06-media/navigate-storage-account.png)
 1. Seleccione la cuenta de almacenamiento, por ejemplo, **amlforacsworks1440637584**.
-1. En **Configuración**, seleccione **Configuración**. Después, establezca **Permitir el acceso anónimo de blobs** en **Habilitado**.
+1. En **Configuración**, seleccione **Configuración**. Después, establece **Permitir el acceso anónimo de blobs** en **Habilitado**.
 1. Seleccione **Guardar**.
 1. En **Almacenamiento de datos, **seleccione **Contenedores**. 
 1. Cree un contenedor para almacenar datos de índice, seleccione **+ Container** (+ Contenedor).
@@ -461,7 +462,7 @@ Ahora reemplazará el enriquecimiento de nombres de personas con el conjunto de 
 
 ### Actualización de las asignaciones de campos de salida
 
-1. Vuelva al panel **Información general**, seleccione **Indizadores** y, después, seleccione **azureblob-indexer**.
+1. Vuelve al panel **Información general** de tu servicio Search y selecciona **Indizadores**, después, selecciona **azureblob-indexer**.
 1. Seleccione la pestaña **Definición del indizador (JSON)** y, después, cambie el valor **outputFieldMappings** a:
 
     ```json
@@ -485,9 +486,9 @@ Ahora, el conjunto de aptitudes actualizado agregará un valor de predicción al
 1. Seleccione **Search**.
 1. Desplácese hasta la parte inferior de los resultados.
     ![Captura de pantalla en la que se muestra el campo de precio previsto del automóvil agregado a los resultados de la búsqueda.](../media/06-media/test-results-search-explorer.png)
-Debería ver el campo de relleno `predicted_price`.
+Deberías ver el campo rellenado `predicted_price`.
 
-## Eliminación de los recursos del ejercicio
+## Limpieza
 
 Ahora que ha completado el ejercicio, elimine todos los recursos que ya no necesita. Eliminación de los recursos de Azure:
 

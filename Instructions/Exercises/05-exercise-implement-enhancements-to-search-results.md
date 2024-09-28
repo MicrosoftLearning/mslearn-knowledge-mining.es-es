@@ -190,7 +190,7 @@ Este hotel coincide con el término lago en el campo `HotelName` y con vista en 
 
     La puntuación de búsqueda ha aumentado, de **0,9433406** a **3,5707965**. Pero todos los demás hoteles tienen puntuaciones calculadas más altas. Este hotel es el último en los resultados.
 
-## Eliminación de los recursos del ejercicio
+## Limpieza
 
 Ahora que ha completado el ejercicio, elimine todos los recursos que ya no necesita.
 
