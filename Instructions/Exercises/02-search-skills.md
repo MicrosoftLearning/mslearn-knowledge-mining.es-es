@@ -141,22 +141,21 @@ Para implementar la funcionalidad de recuento de palabras como una aptitud perso
 > **Nota**: En este ejercicio, creará una función Node.JS sencilla mediante las funcionalidades de edición de código de Azure Portal. En una solución de producción, lo normal es usar un entorno de desarrollo como Visual Studio Code para crear una aplicación de funciones en el lenguaje preferido (por ejemplo, C#, Python, Node.JS o Java) y publicarla en Azure como parte de un proceso de DevOps.
 
 1. En Azure Portal, en la página **Inicio**, cree un nuevo recurso **Aplicación de funciones** con la siguiente configuración:
+    - **Plan de hospedaje**: consumo
     - **Suscripción**: *Su suscripción*
     - **Grupo de recursos**: *el mismo grupo de recursos que el recurso de Búsqueda de Azure AI*
     - **Nombre de la aplicación de funciones**: *un nombre único*
-    - **Publicar**: Código
     - **Pila en tiempo de ejecución**: Node.js.
     - **Versión**: 18 LTS
     - **Región**: *la misma región que el recurso de Búsqueda de Azure AI*
+    - **Sistema operativo**: Windows
 
 2. Espere a que se complete la implementación y, a continuación, vaya al recurso de aplicación de funciones implementado.
-3. En la página **Información general**, seleccione la opción **Crear en Azure Portal** para crear una nueva función con la siguiente configuración:
-    - **Configure un entorno de desarrollo**"
-        - **Entorno de desarrollo**: desarrollo en portal
-    - **Seleccione una plantilla**"
-        - **Plantilla**: Desencadenador HTTP
+3. En la página **Información general**, selecciona **Crear función** de la parte inferior de la página para crear una nueva función con la siguiente configuración:
+    - **Seleccione una plantilla**
+        - **Plantilla**: Desencadenador HTTP    
     - **Detalles de plantilla**:
-        - **Nueva función**: recuento de palabras
+        - **Nombre de la función**: wordcount
         - **Nivel de autorización**: Función
 4. Espere a que se cree la función *recuento de palabras*. A continuación, en su página, seleccione la pestaña **Código y prueba**.
 5. Reemplace el código de la función predeterminada por el siguiente:
@@ -372,7 +371,7 @@ Ahora que tiene un índice, puede realizar búsquedas en él.
 
     Esta consulta recupera los campos **url** y **top_words** de todos los documentos que mencionan *Las Vegas*.
 
-## Eliminación de los recursos del ejercicio
+## Limpieza
 
 Ahora que ha completado el ejercicio, elimine todos los recursos que ya no necesita. Eliminación de los recursos de Azure:
 
