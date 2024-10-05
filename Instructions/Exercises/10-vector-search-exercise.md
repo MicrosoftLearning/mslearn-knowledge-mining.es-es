@@ -74,3 +74,7 @@ Debería ver un código de estado de tipo **200** que muestra que la solicitud s
 1. Seleccione la pestaña **Cuerpo** para ver la respuesta y ver los resultados.
 
 Debería ver un código de estado de tipo **200** si se obtiene una solicitud correcta.
+
+### Limpieza
+
+Ahora que ha completado el ejercicio, elimine todos los recursos que ya no necesita. Comience con el código clonado en la máquina. A continuación, elimine los recursos de Azure.
