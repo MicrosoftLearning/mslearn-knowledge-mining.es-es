@@ -15,7 +15,7 @@ En este ejercicio, creará una solución de Búsqueda de Azure AI, importará al
 
 Para poder empezar a usar una sesión de depuración, debe crear un servicio de Azure Cognitive Search.
 
-1. [Implementar recursos en Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-search-knowledge-mining%2Fmain%2Fazuredeploy.json): seleccione este vínculo para implementar todos los recursos que necesita en Azure Portal.
+1. [Implementar recursos en Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoftLearning%2Fmslearn-knowledge-mining%2Fmain%2FLabfiles%2F08-debug-search%2Fazuredeploy.json): seleccione este vínculo para implementar todos los recursos que necesita en Azure Portal.
 
     ![Captura de pantalla de la plantilla de implementación de ARM con campos rellenados](../media/08-media/arm-template-deployment.png)
 
