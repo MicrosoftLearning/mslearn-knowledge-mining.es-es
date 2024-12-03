@@ -78,71 +78,71 @@ Ahora que tiene los recursos de Azure necesarios, puede crear una solución de b
 - Un **índice** que defina un conjunto de registros de documentos en los que se pueden realizar búsquedas.
 - Un **indexador** que extraiga los documentos del origen de datos, aplique el conjunto de aptitudes y rellene el índice.
 
-En este ejercicio, usará la interfaz de REST de Búsqueda de Azure AI para crear estos componentes mediante el envío de solicitudes JSON.
+En este ejercicio, usarás la interfaz de REST de Búsqueda de Azure AI para crear estos componentes mediante el envío de solicitudes JSON.
 
-1. En Visual Studio Code, en la carpeta **02-search-skill**, expanda la carpeta **create-search** y seleccione **data_source.json**. Este archivo contiene una definición JSON para un origen de datos denominado **margies-custom-data**.
-2. Reemplace el marcador de posición **YOUR_CONNECTION_STRING** por la cadena de conexión de la cuenta de almacenamiento de Azure, que debe ser similar a la siguiente:
+1. En Visual Studio Code, en la carpeta **02-search-skill**, expande la carpeta **create-search** y selecciona **data_source.json**. Este archivo contiene una definición JSON para un origen de datos denominado **margies-custom-data**.
+2. Reemplaza el marcador de posición **YOUR_CONNECTION_STRING** por la cadena de conexión de la cuenta de almacenamiento de Azure, que debe ser similar a la siguiente:
 
     ```
     DefaultEndpointsProtocol=https;AccountName=ai102str123;AccountKey=12345abcdefg...==;EndpointSuffix=core.windows.net
     ```
 
-    *Puede encontrar la cadena de conexión en la página **Claves de acceso** de su cuenta de almacenamiento en Azure Portal.*
+    *Puedes encontrar la cadena de conexión en la página **Claves de acceso** de tu cuenta de almacenamiento en Azure Portal.*
 
-3. Guarde y cierre el archivo JSON actualizado.
-4. En la carpeta **create-search,** , abra **skillset.json**. Este archivo contiene una definición JSON para un conjunto de aptitudes denominado **margies-custom-skillset**.
-5. En la parte superior de la definición del conjunto de aptitudes, en el elemento **cognitiveServices**, reemplace el marcador de posición **YOUR_AI_SERVICES_KEY** por cualquiera de las claves de los recursos de Servicios de Azure AI.
+3. Guarda y cierra el archivo JSON actualizado.
+4. En la carpeta **create-search,**, abre **skillset.json**. Este archivo contiene una definición JSON para un conjunto de aptitudes denominado **margies-custom-skillset**.
+5. En la parte superior de la definición del conjunto de aptitudes, en el elemento **cognitiveServices**, reemplaza el marcador de posición **YOUR_AI_SERVICES_KEY** por cualquiera de las claves de los recursos de Servicios de Azure AI.
 
     *Puede encontrar las claves en la página **Keys and Endpoint** (Claves y punto de conexión) del recurso de Servicios de Azure AI en Azure Portal.*
 
-6. Guarde y cierre el archivo JSON actualizado.
-7. En la carpeta **create-search,** , abra **index.json**. Este archivo contiene una definición JSON para un índice denominado **margies-custom-index**.
-8. Revise el archivo JSON del índice y ciérrelo sin realizar ningún cambio.
-9. En la carpeta **create-search,** , abra **indexer.json**. Este archivo contiene una definición JSON para un indexador denominado **margies-custom-indexer**.
-10. Revise el archivo JSON del indexador y ciérrelo sin realizar ningún cambio.
-11. En la carpeta **create-search,** , abra **create-search.cmd**. Este script por lotes usa la utilidad cURL para enviar las definiciones JSON a la interfaz de REST del recurso de Búsqueda de Azure AI.
-12. Reemplace los marcadores de posición de variables **YOUR_SEARCH_URL** y **YOUR_ADMIN_KEY** por la dirección **URL** y una de las **claves de administración** del recurso de Búsqueda de Azure AI.
+6. Guarda y cierra el archivo JSON actualizado.
+7. En la carpeta **create-search,**, abre **index.json**. Este archivo contiene una definición JSON para un índice denominado **margies-custom-index**.
+8. Revisa el archivo JSON del índice y ciérralo sin realizar ningún cambio.
+9. En la carpeta **create-search,**, abre **indexer.json**. Este archivo contiene una definición JSON para un indexador denominado **margies-custom-indexer**.
+10. Revisa el archivo JSON del indexador y ciérralo sin realizar ningún cambio.
+11. En la carpeta **create-search,**, abre **create-search.cmd**. Este script por lotes usa la utilidad cURL para enviar las definiciones JSON a la interfaz de REST del recurso de Búsqueda de Azure AI.
+12. Reemplaza los marcadores de posición de variables **YOUR_SEARCH_URL** y **YOUR_ADMIN_KEY** por la dirección **URL** y una de las **claves de administración** del recurso de Búsqueda de Azure AI.
 
-    *Puede encontrar estos valores en las páginas **Información general** y **Claves** del recurso de Búsqueda de Azure AI en Azure Portal.*
+    *Puedes encontrar estos valores en las páginas **Información general** y **Claves** del recurso de Búsqueda de Azure AI en Azure Portal.*
 
-13. Guarde el archivo por lotes actualizado.
-14. Haga clic con el botón derecho en la carpeta **create-search** y seleccione **Open in Integrated Terminal** (Abrir en terminal integrado).
-15. En el panel del terminal de la carpeta **create-search**, escriba el siguiente comando para ejecutar el script por lotes.
+13. Guarda el archivo por lotes actualizado.
+14. Haz clic con el botón derecho en la carpeta **create-search** y selecciona **Open in Integrated Terminal**.
+15. En el panel del terminal de la carpeta **create-search**, escribe el siguiente comando para ejecutar el script por lotes.
 
     ```powershell
     ./create-search
     ```
 
-16. Cuando se complete el script, en Azure Portal, en la página del recurso de Búsqueda de Azure AI, seleccione la página **Indizadores** y espere a que se complete el proceso de indexación.
+16. Cuando se complete el script, en Azure Portal, en la página del recurso de Búsqueda de Azure AI, selecciona la página **Indizadores** y espera a que se complete el proceso de indexación.
 
-    *Puede seleccionar **Actualizar** para supervisar el progreso de la operación de indexación. Puede tardar alrededor de un minuto en completarse.*
+    *Puedes seleccionar **Actualizar** para supervisar el progreso de la operación de indexación. Puede tardar alrededor de un minuto en completarse.*
 
 ## Búsqueda en el índice
 
-Ahora que tiene un índice, puede realizar búsquedas en él.
+Ahora que tienes un índice, puedes realizar búsquedas en él.
 
-1. En la parte superior del panel del recurso de Búsqueda de Azure AI, seleccione **Explorador de búsqueda**.
-2. En el Explorador de búsqueda, en el cuadro **Cadena de consulta**, escriba la siguiente cadena de consulta y, a continuación, seleccione **Buscar**.
+1. En la parte superior del panel del recurso de Búsqueda de Azure AI, selecciona **Explorador de búsqueda**.
+2. En el Explorador de búsqueda, en el cuadro **Cadena de consulta**, escribe la siguiente cadena de consulta y, a continuación, selecciona **Buscar**.
 
     ```
     search=London&$select=url,sentiment,keyphrases&$filter=metadata_author eq 'Reviewer' and sentiment eq 'positive'
     ```
 
-    Esta consulta recupera los valores de **url**, **sentiment** y **keyphrases** de todos los documentos que mencionan *London* (Londres), cuyo autor es *Reviewer* (Revisor) y que tienen una etiqueta de **opinión** positiva (es decir, reseñas positivas que mencionan "London" [Londres]).
+    Esta consulta recupera los valores de **url**, **sentiment** y **keyphrases** de todos los documentos que mencionan *London*, cuyo autor es *Reviewer* y que tienen una etiqueta de **opinión** positiva (es decir, reseñas positivas que mencionan London).
 
 ## Creación de una función de Azure para una aptitud personalizada
 
 La solución de búsqueda incluye una serie de aptitudes de IA integradas que enriquecen el índice con información de los documentos, como las puntuaciones de opinión y las listas de frases clave que se han visto en la tarea anterior.
 
-Puede mejorar aún más el índice mediante la creación de aptitudes personalizadas. Por ejemplo, puede ser útil identificar las palabras que se usan con más frecuencia en cada documento, pero ninguna aptitud integrada ofrece esta funcionalidad.
+Puedes mejorar aún más el índice mediante la creación de aptitudes personalizadas. Por ejemplo, puede ser útil identificar las palabras que se usan con más frecuencia en cada documento, pero ninguna aptitud integrada ofrece esta funcionalidad.
 
-Para implementar la funcionalidad de recuento de palabras como una aptitud personalizada, deberá crear una función de Azure en el lenguaje que prefiera.
+Para implementar la funcionalidad de recuento de palabras como una aptitud personalizada, deberás crear una función de Azure en el lenguaje que prefiera.
 
-> **Nota**: En este ejercicio, creará una función Node.JS sencilla mediante las funcionalidades de edición de código de Azure Portal. En una solución de producción, lo normal es usar un entorno de desarrollo como Visual Studio Code para crear una aplicación de funciones en el lenguaje preferido (por ejemplo, C#, Python, Node.JS o Java) y publicarla en Azure como parte de un proceso de DevOps.
+> **Nota**: en este ejercicio, crearás una función Node.JS sencilla mediante las funcionalidades de edición de código de Azure Portal. En una solución de producción, lo normal es usar un entorno de desarrollo como Visual Studio Code para crear una aplicación de funciones en el lenguaje preferido (por ejemplo, C#, Python, Node.JS o Java) y publicarla en Azure como parte de un proceso de DevOps.
 
-1. En Azure Portal, en la página **Inicio**, cree un nuevo recurso **Aplicación de funciones** con la siguiente configuración:
+1. En Azure Portal, en la página **Inicio**, crea un nuevo recurso **Aplicación de funciones** con la siguiente configuración:
     - **Plan de hospedaje**: consumo
-    - **Suscripción**: *Su suscripción*
+    - **Suscripción**: *tu suscripción*
     - **Grupo de recursos**: *el mismo grupo de recursos que el recurso de Búsqueda de Azure AI*
     - **Nombre de la aplicación de funciones**: *un nombre único*
     - **Pila en tiempo de ejecución**: Node.js.
@@ -150,7 +150,7 @@ Para implementar la funcionalidad de recuento de palabras como una aptitud perso
     - **Región**: *la misma región que el recurso de Búsqueda de Azure AI*
     - **Sistema operativo**: Windows
 
-2. Espere a que se complete la implementación y, a continuación, vaya al recurso de aplicación de funciones implementado.
+2. Espera a que se complete la implementación y, a continuación, ve al recurso de aplicación de funciones implementado.
 3. En la página **Información general**, selecciona **Crear función** de la parte inferior de la página para crear una nueva función con la siguiente configuración:
     - **Seleccione una plantilla**
         - **Plantilla**: Desencadenador HTTP    
@@ -341,7 +341,7 @@ Ahora tiene que incluir la función como una aptitud personalizada en el conjunt
 10. En la carpeta **update-search**, abra **update-search.cmd**. Este script por lotes usa la utilidad cURL para enviar las definiciones JSON actualizadas a la interfaz de REST del recurso de Búsqueda de Azure AI.
 11. Reemplace los marcadores de posición de variables **YOUR_SEARCH_URL** y **YOUR_ADMIN_KEY** por la dirección **URL** y una de las **claves de administración** del recurso de Búsqueda de Azure AI.
 
-    *Puede encontrar estos valores en las páginas **Información general** y **Claves** del recurso de Búsqueda de Azure AI en Azure Portal.*
+    *Puedes encontrar estos valores en las páginas **Información general** y **Claves** del recurso de Búsqueda de Azure AI en Azure Portal.*
 
 12. Guarde el archivo por lotes actualizado.
 13. Haga clic con el botón derecho en la carpeta **update-search** y seleccione **Abrir en terminal integrado**.
@@ -353,11 +353,11 @@ Ahora tiene que incluir la función como una aptitud personalizada en el conjunt
 
 15. Cuando se complete el script, en Azure Portal, en la página del recurso de Búsqueda de Azure AI, seleccione la página **Indizadores** y espere a que se complete el proceso de indexación.
 
-    *Puede seleccionar **Actualizar** para supervisar el progreso de la operación de indexación. Puede tardar alrededor de un minuto en completarse.*
+    *Puedes seleccionar **Actualizar** para supervisar el progreso de la operación de indexación. Puede tardar alrededor de un minuto en completarse.*
 
 ## Búsqueda en el índice
 
-Ahora que tiene un índice, puede realizar búsquedas en él.
+Ahora que tienes un índice, puedes realizar búsquedas en él.
 
 1. En la parte superior del panel del recurso de Búsqueda de Azure AI, seleccione **Explorador de búsqueda**.
 2. En el Explorador de búsqueda, cambie la vista a **la vista JSON** y, a continuación, envíe la siguiente consulta de búsqueda:
