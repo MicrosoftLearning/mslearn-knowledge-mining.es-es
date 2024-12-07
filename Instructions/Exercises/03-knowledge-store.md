@@ -94,9 +94,9 @@ Usará la interfaz de REST para enviar definiciones JSON para los componentes de
     DefaultEndpointsProtocol=https;AccountName=ai102str123;AccountKey=12345abcdefg...==;EndpointSuffix=core.windows.net
     ```
 
-    *Puede encontrar la cadena de conexión en la página **Claves de acceso** de su cuenta de almacenamiento en Azure Portal.*
+    *Puedes encontrar la cadena de conexión en la página **Claves de acceso** de tu cuenta de almacenamiento en Azure Portal.*
 
-3. Guarde y cierre el archivo JSON actualizado.
+3. Guarda y cierra el archivo JSON actualizado.
 4. En la carpeta **create-search,** , abra **skillset.json**. Este archivo contiene una definición JSON para un conjunto de aptitudes denominado **margies-knowledge-skillset**.
 5. En la parte superior de la definición del conjunto de aptitudes, en el elemento **cognitiveServices**, reemplace el marcador de posición **YOUR_COGNITIVE_SERVICES_KEY** por cualquiera de las claves de los recursos de Servicios de Azure AI.
 
@@ -123,19 +123,19 @@ Usará la interfaz de REST para enviar definiciones JSON para los componentes de
 Ahora que ha preparado los objetos JSON que definen los componentes de la solución de búsqueda, puede enviar los documentos JSON a la interfaz REST para crearlos.
 
 1. En la carpeta **create-search,** , abra **create-search.cmd**. Este script por lotes usa la utilidad cURL para enviar las definiciones JSON a la interfaz de REST del recurso de Búsqueda de Azure AI.
-2. Reemplace los marcadores de posición de variables **YOUR_SEARCH_URL** y **YOUR_ADMIN_KEY** por la dirección **URL** y una de las **claves de administración** del recurso de Búsqueda de Azure AI.
+2. Reemplaza los marcadores de posición de variables **YOUR_SEARCH_URL** y **YOUR_ADMIN_KEY** por la dirección **URL** y una de las **claves de administración** del recurso de Búsqueda de Azure AI.
 
-    *Puede encontrar estos valores en las páginas **Información general** y **Claves** del recurso de Búsqueda de Azure AI en Azure Portal.*
+    *Puedes encontrar estos valores en las páginas **Información general** y **Claves** del recurso de Búsqueda de Azure AI en Azure Portal.*
 
-3. Guarde el archivo por lotes actualizado.
-4. Haga clic con el botón derecho en la carpeta **create-search** y seleccione **Open in Integrated Terminal** (Abrir en terminal integrado).
-5. En el panel del terminal de la carpeta **create-search**, escriba el siguiente comando para ejecutar el script por lotes.
+3. Guarda el archivo por lotes actualizado.
+4. Haz clic con el botón derecho en la carpeta **create-search** y selecciona **Open in Integrated Terminal**.
+5. En el panel del terminal de la carpeta **create-search**, escribe el siguiente comando para ejecutar el script por lotes.
 
     ```powershell
     ./create-search
     ```
 
-6. Cuando se complete el script, en Azure Portal, en la página del recurso de Búsqueda de Azure AI, seleccione la página **Indizadores** y espere a que se complete el proceso de indexación.
+6. Cuando se complete el script, en Azure Portal, en la página del recurso de Búsqueda de Azure AI, selecciona la página **Indizadores** y espera a que se complete el proceso de indexación.
 
     *Puede seleccionar **Actualizar** para supervisar el progreso de la operación de indexación. Puede tardar alrededor de un minuto en completarse.*
 
