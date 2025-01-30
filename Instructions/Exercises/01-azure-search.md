@@ -315,7 +315,7 @@ Aunque puedes usar el portal para crear y modificar las soluciones de búsqueda,
 
     Todos los demás campos de contenido y metadatos del documento de origen se asignan de forma implícita a campos con el mismo nombre en el índice.
 
-3. Revise la sección **ouputFieldMappings**, que asigna las salidas de las aptitudes del conjunto de aptitudes a los campos del índice. La mayoría de ellas reflejan las opciones seleccionadas en la interfaz de usuario, pero se ha agregado la siguiente asignación para asignar el valor de **sentimentLabel** extraído mediante la aptitud de opinión al campo **sentiment** que agregó al índice:
+3. Revisa la sección **outputFieldMappings**, que asigna las salidas de las aptitudes del conjunto de aptitudes a los campos del índice. La mayoría de ellas reflejan las opciones seleccionadas en la interfaz de usuario, pero se ha agregado la siguiente asignación para asignar el valor de **sentimentLabel** extraído mediante la aptitud de opinión al campo **sentiment** que agregó al índice:
 
     ```json
     {
