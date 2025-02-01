@@ -157,6 +157,9 @@ Para implementar la funcionalidad de recuento de palabras como una aptitud perso
     - **Detalles de plantilla**:
         - **Nombre de la función**: wordcount
         - **Nivel de autorización**: Función
+
+    > **Nota**: si recibes un error de función de creación, actualiza la página y el recurso debería crearse según lo previsto.
+
 4. Espere a que se cree la función *recuento de palabras*. A continuación, en su página, seleccione la pestaña **Código y prueba**.
 5. Reemplace el código de la función predeterminada por el siguiente:
 
