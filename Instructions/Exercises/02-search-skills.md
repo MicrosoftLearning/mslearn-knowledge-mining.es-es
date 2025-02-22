@@ -146,9 +146,11 @@ Para implementar la funcionalidad de recuento de palabras como una aptitud perso
     - **Grupo de recursos**: *el mismo grupo de recursos que el recurso de Búsqueda de Azure AI*
     - **Nombre de la aplicación de funciones**: *un nombre único*
     - **Pila en tiempo de ejecución**: Node.js.
-    - **Versión**: 18 LTS
+    - **Versión**: 20 LTS
     - **Región**: *la misma región que el recurso de Búsqueda de Azure AI*
     - **Sistema operativo**: Windows
+
+>**Nota**: Si la región en la que creaste el recurso de Búsqueda de Azure AI no tiene cuota disponible para implementar el recurso de aplicación de funciones, puedes elegir otra región en la que la suscripción tenga cuota disponible para la implementación.
 
 2. Espera a que se complete la implementación y, a continuación, ve al recurso de aplicación de funciones implementado.
 3. En la página **Información general**, selecciona **Crear función** de la parte inferior de la página para crear una nueva función con la siguiente configuración:
